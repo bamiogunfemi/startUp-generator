@@ -31,9 +31,10 @@ class RandomWordsState extends State<RandomWords> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Startup Name Generator'),
+        backgroundColor: Colors.blueGrey[900],
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.list),
             onPressed: _pushSaved,
           ),
         ],
@@ -50,8 +51,8 @@ class RandomWordsState extends State<RandomWords> {
         style: _biggerFont,
       ),
       trailing: Icon(
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.purple : null,
+        alreadySaved ? Icons.star : Icons.star_border,
+        color: alreadySaved ? Colors.blueGrey[300] : null,
       ),
       onTap: () {
         setState(() {
@@ -93,21 +94,20 @@ class RandomWordsState extends State<RandomWords> {
               );
             },
           );
-               final List<Widget> divided = ListTile
-          .divideTiles(
+          final List<Widget> divided = ListTile.divideTiles(
             context: context,
             tiles: tiles,
-          )
-              .toList();
+          ).toList();
 
-        return Scaffold(         // Add 6 lines from here...
-          appBar: AppBar(
-            title: Text('Saved Suggestions'),
-          ),
-          body: ListView(children: divided),
-        );                       // ... to here.
-      },
-    ),
-  );
-}
+          return Scaffold(
+            appBar: AppBar(
+              title: Text('Saved Suggestions'),
+              backgroundColor: Colors.blueGrey[900],
+            ),
+            body: ListView(children: divided),
+          );
+        },
+      ),
+    );
+  }
 }
