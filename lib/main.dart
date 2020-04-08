@@ -101,7 +101,7 @@ class RandomWordsState extends State<RandomWords> {
 
           return Scaffold(
             appBar: AppBar(
-              title: Text('Saved Suggestions'),
+              title: Text('Favorites'),
               backgroundColor: Colors.blueGrey[900],
             ),
             body: ListView(children: divided),
